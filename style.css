@@ -204,16 +204,8 @@ body {
     margin: 10px;
   }
   
-  .footer-logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #0071ff;
-    margin-bottom: 10px;
-  }
   
-  .footer-logo span {
-    color: orange;
-  }
+ 
   
   .footer p, .footer a {
     font-size: 14px;
@@ -228,6 +220,7 @@ body {
   }
   
   .footer h4 {
+    text-align: left;
     margin-bottom: 12px;
     font-size: 16px;
   }
@@ -240,20 +233,28 @@ body {
     width: 100%;
   }
   
-  @media (max-width: 768px) {
-    .navbar, .footer {
-      padding: 15px 20px;
-      text-align: center;
-    }
-    .nav-button {
-      padding: 8px 16px;
-      font-size: 13px;
-    }
-    .footer-section {
-      flex: 1 1 100%;
-    }
+  /* For tablets */
+@media (max-width: 768px) {
+  .navbar, .footer, .cards {
+    flex-direction: column;
+    text-align: center;
   }
-  
+  .card {
+    width: 100%;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+  .nav-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .carousel-controls {
+    display: none; /* Optional: hide buttons if too small */
+  }
+}
+
   .offers {
     padding: 60px 20px;
     background: #f8f9fc;
@@ -359,4 +360,132 @@ body {
     color: #ff6600;
     transition: color 0.3s ease;
   }
-  
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-left img {
+    height: 50px;
+    width: 70px;
+}
+
+/* Make icons display side-by-side */
+.nav-icons {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-icons li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap; /* Prevent wrapping */
+    cursor: pointer;
+}
+
+.nav-icons i {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #007BFF;
+}
+
+.nav-right .nav-button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-right .nav-button:hover {
+    background-color: #0056b3;
+}
+.review-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+}
+
+.review-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.review-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  color: #444;
+  font-style: italic;
+}
+
+.review-author {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #0b1943;
+  font-style: normal;
+}
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;         /* Ensures all cards stay in a single row */
+  overflow: hidden;          /* Hides anything beyond the container */
+  scroll-behavior: smooth;
+  transition: transform 0.3s ease-in-out;
+  max-width: 100%;
+}
+
+.review-card {
+  flex: 0 0 300px;            /* Prevents shrinking; fixes width */
+  margin: 0 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: hsl(32, 100%, 50%);
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 24px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}

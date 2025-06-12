@@ -6,14 +6,33 @@
   <title>Holiday Modal - New Design</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+  <script src="script.js"></script>
 </head>
 <body>
 
-<!-- Navbar -->
+  <!-- Navbar -->
 <nav class="navbar">
-    <img src="images/logos-2.webp" height="5%" width="5%" alt="">
-    <button class="nav-button">Get Quotes</button>
+  <div class="nav-left">
+      <img src="images/logos-2.webp" height="40" width="50" alt="Logo">
+  </div>
+
+  <ul class="nav-icons">
+      <li><i class="fas fa-globe-americas"></i> International</li>
+      <li><i class="fas fa-plane-departure"></i> Domestic</li>
+      <li><i class="fas fa-heart"></i> Honeymoon</li>
+      <li><i class="fas fa-ellipsis-h"></i> More</li>
+  </ul>
+
+  <div class="nav-search">
+    <input type="text" placeholder="Search destinations..." />
+  </div>
+  <div>
+    <button type="submit"><i class="fas fa-search"></i></button>
+  </div>
+
+  <div class="nav-right">
+      <button class="nav-button">Get Quotes</button>
+  </div>
 </nav>
 
 <!-- image section -->
@@ -22,7 +41,7 @@
   </section>
 <!-- image section -->
   
-  <!-- Destination Cards --> 
+<!-- Destination Cards --> 
     <div class="container">
         <h2 class="section-title">Top Holiday Packages</h2>
         <div class="card-grid">
@@ -55,6 +74,7 @@
       <div class="container">
         <h2 class="section-title">Top Holiday Packages</h2>
         <div class="card-grid">
+          <a href="Thailand.html">
           <div class="card">
             <img src="images/thailand.jpg" alt="Thailand">
             <div class="card-content">
@@ -63,6 +83,7 @@
               <a href="#" class="btn">Book Now</a>
             </div>
           </div>
+        </a>
           <div class="card">
             <img src="images/bali.jpg" alt="Bali">
             <div class="card-content">
@@ -81,6 +102,7 @@
           </div>
         </div>
       </div>
+
   <!-- image section -->
       <section class="image-section">
         <img src="images/map.jpg" class="full-width-img" />
@@ -95,42 +117,46 @@
           </p>
         </div>
       
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1100px; margin: auto;">
-          <!-- Review 1 -->
-          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); width: 300px;">
-            <p style="font-style: italic; color: #444;">“Triplogy made planning our honeymoon to Bali effortless and magical. Highly recommend!”</p>
-            <div style="margin-top: 15px; font-weight: bold; color: #0b1943;">– Sarah M.</div>
+        <div class="carousel-wrapper">
+          <div class="carousel" id="carousel">
+            <div class="review-card">
+              <p>“Triplogy made planning our honeymoon to Bali effortless and magical. Highly recommend!”</p>
+              <div class="review-author">– Sarah M.</div>
+            </div>
+            <div class="review-card">
+              <p>“Excellent service, great prices, and truly memorable adventures. Thank you, Triplogy!”</p>
+              <div class="review-author">– David L.</div>
+            </div>
+            <div class="review-card">
+              <p>“A trustworthy site for booking international trips. Super easy and well organized.”</p>
+              <div class="review-author">– Priya R.</div>
+            </div>
+            <div class="review-card">
+              <p>“Best experience ever! Triplogy team is awesome.”</p>
+              <div class="review-author">– Aman S.</div>
+            </div>
           </div>
-      
-          <!-- Review 2 -->
-          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); width: 300px;">
-            <p style="font-style: italic; color: #444;">“Excellent service, great prices, and truly memorable adventures. Thank you, Triplogy!”</p>
-            <div style="margin-top: 15px; font-weight: bold; color: #0b1943;">– David L.</div>
-          </div>
-      
-          <!-- Review 3 -->
-          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); width: 300px;">
-            <p style="font-style: italic; color: #444;">“A trustworthy site for booking international trips. Super easy and well organized.”</p>
-            <div style="margin-top: 15px; font-weight: bold; color: #0b1943;">– Priya R.</div>
-          </div>
-          <!-- Review  -->
-          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); width: 300px;">
-            <p style="font-style: italic; color: #444;">“Triplogy made planning our honeymoon to Bali effortless and magical. Highly recommend!”</p>
-            <div style="margin-top: 15px; font-weight: bold; color: #0b1943;">– Sarah M.</div>
-          </div>
-      
-          <!-- Review 5 -->
-          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); width: 300px;">
-            <p style="font-style: italic; color: #444;">“Excellent service, great prices, and truly memorable adventures. Thank you, Triplogy!”</p>
-            <div style="margin-top: 15px; font-weight: bold; color: #0b1943;">– David L.</div>
-          </div>
-      
-          <!-- Review 6 -->
-          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); width: 300px;">
-            <p style="font-style: italic; color: #444;">“A trustworthy site for booking international trips. Super easy and well organized.”</p>
-            <div style="margin-top: 15px; font-weight: bold; color: #0b1943;">– Priya R.</div>
+        
+          <div class="carousel-controls">
+            <button class="arrow" onclick="scrollCarousel(-1)">‹</button>
+            <button class="arrow" onclick="scrollCarousel(1)">›</button>
           </div>
         </div>
+        
+        <div class="carousel-wrapper">
+          <div class="carousel" id="carousel">
+            <div class="review-card">Review 1</div>
+            <div class="review-card">Review 2</div>
+            <div class="review-card">Review 3</div>
+            <div class="review-card">Review 4</div>
+          </div>
+        
+          <div class="carousel-controls">
+            <button onclick="scrollCarousel(-1)">‹</button>
+            <button onclick="scrollCarousel(1)">›</button>
+          </div>
+        </div>
+        
       </section>
       
 
@@ -221,58 +247,79 @@
         </div>
       </div>
 
-      <button class="submit-btn" type="submit">Submit Enquiry</button>
+      <button class="submit-btn"  type="submit">Submit Enquiry</button>
     </form>
   </div>
 </div>
+<!-- Modal -->
 
 <footer class="footer">
     <div class="footer-section">
-      <div class="footer-logo">Tripl<span>ogy</span></div>
+      <div class="footer-logo"><img src="images/logos-2.webp" height="100" width="120" alt="Logo"></div>
       <p>Explore the world with Triplogy. Discover new destinations, amazing offers, and unforgettable journeys all in one place.</p>
     </div>
 
     <div class="footer-section">
-      <h4>Quick Links</h4>
-      <a href="#">Home</a>
-      <a href="#">Flights</a>
-      <a href="#">Hotels</a>
-      <a href="#">Holiday Packages</a>
+      <h4 >Packages</h4>
+      <ul style="list-style-type: none;">
+      <li><a href="#">Dubai</a></li>
+      <li><a href="#">Bali</a></li>
+      <li><a href="#">Thailand</a></li>
+      <li><a href="#">Malaysia</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+    <h4>Quick Links</h4>
+    <ul style="list-style-type: none;">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Flights</a></li>
+      <li><a href="#">Hotels</a></li>
+      <li><a href="#">Holiday Packages</a></li>
+    </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Pages</h4>
+      <ul style="list-style-type: none;">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Blogs</a></li>
+      </ul>
     </div>
 
     <div class="footer-section">
       <h4>Follow Us</h4>
       <div class="social-icons">
-        <a href="#"><i class="fa fa-facebook-official"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-youtube-play"></i></a>
+        <a href="https://www.facebook.com/triplogyofficial"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/triplogyofficial"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/triplogy/"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
+
+    <div class="footer-section">
+      <h4>Address</h4>
+      <div class="footer-section">
+      <ul style="list-style-type: none;">
+      <li>429 D, D-21 Corporate Park, Sector 8 Dwarka, New Delhi, India - 110077</li>
+      <br>
+      <li>Email</li>
+      <li>contact@triplogy.com</li>
+      </ul>
+      </div>
+    </div>
+
+    
 
     <div class="footer-bottom">
       &copy; 2025 Triplogy. All rights reserved.
     </div>
   </footer>
 
-<script>
-  window.onload = function () {
-    const modal = document.getElementById("glassModal");
-    const closeBtn = document.querySelector(".close-btn");
-
-    modal.style.display = "flex";
-
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-  };
-</script>
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
 
 </body>
 </html>
